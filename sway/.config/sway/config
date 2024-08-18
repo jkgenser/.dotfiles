@@ -225,6 +225,11 @@ input "3504:3345:Micro-Star_INT'L_CO.,_LTD_MSI_GM11_Gaming_Mouse" {
     natural_scroll enabled
 }
 
-# updated launcher
+# updated launcher -> use mod+d in order to have rofi use flatpak picker
 bindsym $mod+d exec ~/.config/rofi/launch_flatpak.sh
     # bindsym $mod+d exec $menu
+
+output DP-2 scale 1.25
+output DP-5 scale 1.0
+
+
