@@ -220,3 +220,8 @@ include /etc/sway/config.d/*
 # remap capslock
 input * xkb_options "ctrl:nocaps"
 
+# mouse should be natural
+input "3504:3345:Micro-Star_INT'L_CO.,_LTD_MSI_GM11_Gaming_Mouse" {
+    natural_scroll enabled
+}
+
