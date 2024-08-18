@@ -69,7 +69,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    # bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -225,3 +225,6 @@ input "3504:3345:Micro-Star_INT'L_CO.,_LTD_MSI_GM11_Gaming_Mouse" {
     natural_scroll enabled
 }
 
+# updated launcher
+bindsym $mod+d exec ~/.config/rofi/launch_flatpak.sh
+    # bindsym $mod+d exec $menu
