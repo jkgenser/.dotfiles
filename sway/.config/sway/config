@@ -232,4 +232,6 @@ bindsym $mod+d exec ~/.config/rofi/launch_flatpak.sh
 output DP-2 scale 1.25
 output DP-5 scale 1.0
 
+# print screen
+bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
