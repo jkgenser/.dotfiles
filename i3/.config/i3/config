@@ -165,10 +165,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h shrink width 10 px or 10 ppt
+        bindsym j grow height 10 px or 10 ppt
+        bindsym k shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -196,3 +196,5 @@ exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
 exec --no-startup-id xrandr --output DP-4 --mode 5120x1440
 
+# workspace 3 should always float
+for_window [workspace="3"] floating enable
