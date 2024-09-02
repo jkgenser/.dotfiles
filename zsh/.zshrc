@@ -16,3 +16,6 @@ source <(fzf --zsh)
 # otherwise there are blurry fonts
 # uncomment this if I ever use wayland/sway again
 # export ELECTRON_OZONE_PLATFORM_HINT=wayland
+
+alias nvimc="~/.local/scripts/start-nvim-container.sh"
+
