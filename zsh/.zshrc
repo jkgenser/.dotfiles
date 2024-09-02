@@ -14,4 +14,5 @@ source <(fzf --zsh)
 
 # make sure that electron apps like slack use wayland
 # otherwise there are blurry fonts
-ELECTRON_OZONE_PLATFORM_HINT=wayland
+# uncomment this if I ever use wayland/sway again
+# export ELECTRON_OZONE_PLATFORM_HINT=wayland
