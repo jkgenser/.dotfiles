@@ -38,3 +38,29 @@ export PATH="$PATH:/var/home/j/.local/bin"
 
 # more path
 export PATH="$PATH:/var/home/j/.local/scripts"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+din() {
+    # Check if an argument is provided
+    if [ -z "$1" ]; then
+        echo "Usage: din <container_name_part>"
+        return 1
+    fi
+
+    # Find the first container ID that contains the argument in its name
+    CONTAINER_ID=$(podman ps --format "{{.ID}} {{.Names}}" | grep "$1" | awk '{print $1}' | head -n 1)
+
+    # Check if a container was found
+    if [ -z "$CONTAINER_ID" ]; then
+        echo "No running container found with name containing: $1"
+        return 1
+    fi
+
+    # Exec into the container
+    podman exec -it "$CONTAINER_ID" /bin/bash
+}
+
