@@ -18,6 +18,10 @@ source <(fzf --zsh)
 # export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 alias nvimc="~/.local/scripts/start-nvim-container.sh"
+alias dev="distrobox enter dev"
 
 
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
