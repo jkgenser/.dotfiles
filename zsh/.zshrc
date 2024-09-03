@@ -19,3 +19,5 @@ source <(fzf --zsh)
 
 alias nvimc="~/.local/scripts/start-nvim-container.sh"
 
+
+. "$HOME/.cargo/env"
