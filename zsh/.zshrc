@@ -19,9 +19,14 @@ source <(fzf --zsh)
 
 alias nvimc="~/.local/scripts/start-nvim-container.sh"
 alias dev="distrobox enter dev"
-alias gcloud="distrobox enter dev -- gcloud"
-alias docker="podman"
 
+# docker() {
+#   podman "$@"
+# }
+#
+# gcloud() {
+#   distrobox enter dev -- gcloud "$@"
+# }
 
 # . "$HOME/.cargo/env"
 
@@ -30,3 +35,6 @@ alias docker="podman"
 
 # Created by `pipx` on 2024-09-03 16:25:18
 export PATH="$PATH:/var/home/j/.local/bin"
+
+# more path
+export PATH="$PATH:/var/home/j/.local/scripts"
