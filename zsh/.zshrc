@@ -20,6 +20,7 @@ source <(fzf --zsh)
 alias nvimc="~/.local/scripts/start-nvim-container.sh"
 alias dev="distrobox enter dev"
 alias gcloud="distrobox enter dev -- gcloud"
+alias docker="podman"
 
 
 # . "$HOME/.cargo/env"
