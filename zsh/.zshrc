@@ -25,3 +25,6 @@ alias dev="distrobox enter dev"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Created by `pipx` on 2024-09-03 16:25:18
+export PATH="$PATH:/var/home/j/.local/bin"
