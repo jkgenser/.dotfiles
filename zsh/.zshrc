@@ -64,3 +64,8 @@ din() {
     podman exec -it "$CONTAINER_ID" /bin/bash
 }
 
+# Start SSH agent if not already running
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -s)"
+fi
+
