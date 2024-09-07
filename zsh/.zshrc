@@ -19,6 +19,7 @@ source <(fzf --zsh)
 
 alias nvimc="~/.local/scripts/start-nvim-container.sh"
 alias dev="distrobox enter dev"
+export NVIM_APPNAME="nvim-lazy"
 
 # docker() {
 #   podman "$@"
