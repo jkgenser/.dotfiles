@@ -34,10 +34,10 @@ alias dev="distrobox enter dev"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Created by `pipx` on 2024-09-03 16:25:18
-export PATH="$PATH:/var/home/j/.local/bin"
+export PATH="$PATH:/home/j/.local/bin"
 
 # more path
-export PATH="$PATH:/var/home/j/.local/scripts"
+export PATH="$PATH:/home/j/.local/scripts"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
