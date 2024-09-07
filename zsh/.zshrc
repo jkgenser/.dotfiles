@@ -69,3 +69,12 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
     eval "$(ssh-agent -s)"
 fi
 
+
+# Created by `pipx` on 2024-09-07 15:33:37
+export PATH="$PATH:/home/j/.local/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/j/google-cloud-sdk/path.zsh.inc' ]; then . '/home/j/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/j/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/j/google-cloud-sdk/completion.zsh.inc'; fi
