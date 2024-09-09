@@ -10,7 +10,8 @@ alias rpmo='rpm-ostree'
 alias tb='toolbox'
 alias db='distrobox'
 
-source <(fzf --zsh)
+# maybe uncomment this when we get a more recent version of fzf
+# source <(fzf --zsh)
 
 # make sure that electron apps like slack use wayland
 # otherwise there are blurry fonts
