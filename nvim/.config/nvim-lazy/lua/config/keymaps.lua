@@ -5,4 +5,4 @@
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 vim.keymap.set("n", "<leader>/", "gcc", { desc = "comment toggle", remap = true })
 vim.keymap.set("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
-vim.g.clipboard = "unnamedplus"
+-- vim.g.clipboard = "unnamedplus"
