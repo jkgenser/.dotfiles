@@ -197,7 +197,7 @@ bar {
 # startup commands
 exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id xinput ~/.local/scripts/mouse-settings.sh
+exec --no-startup-id ~/.local/scripts/mouse-settings.sh
 exec --no-startup-id xrandr --output DP-4 --mode 5120x1440
 
 # workspace 3 should always float
