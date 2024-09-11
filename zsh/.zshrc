@@ -22,13 +22,10 @@ alias nvimc="~/.local/scripts/start-nvim-container.sh"
 alias dev="distrobox enter dev"
 export NVIM_APPNAME="nvim-lazy"
 
-# docker() {
-#   podman "$@"
-# }
-#
-# gcloud() {
-#   distrobox enter dev -- gcloud "$@"
-# }
+# zsh key bindings
+bindkey '\e[1;5C' forward-word
+bindkey '\e[1;5D' backward-word
+
 
 # . "$HOME/.cargo/env"
 
