@@ -9,6 +9,7 @@ setopt SHARE_HISTORY
 alias rpmo='rpm-ostree'
 alias tb='toolbox'
 alias db='distrobox'
+alias tf='terraform'
 
 # maybe uncomment this when we get a more recent version of fzf
 # source <(fzf --zsh)
