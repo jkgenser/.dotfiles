@@ -10,6 +10,7 @@ alias rpmo='rpm-ostree'
 alias tb='toolbox'
 alias db='distrobox'
 alias tf='terraform'
+alias z='zellij'
 
 # maybe uncomment this when we get a more recent version of fzf
 # source <(fzf --zsh)
