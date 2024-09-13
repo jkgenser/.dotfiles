@@ -6,5 +6,4 @@ vim.g.lazyvim_python_lsp = "basedpyright"
 -- vim.g.lazyvim_python_lsp = "pyright"
 vim.g.lazyvim_python_ruff = "ruff_lsp"
 vim.opt.relativenumber = false
--- vim.o.number = false
 vim.opt.number = false
