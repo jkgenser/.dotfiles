@@ -209,3 +209,8 @@ exec --no-startup-id xinput set-prop 10 "libinput Scroll Method Enabled" 0 0 1
 
 # workspace 3 should always float
 for_window [workspace="3"] floating enable
+
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+# scratchpad
