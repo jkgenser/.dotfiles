@@ -4,3 +4,12 @@
 
 [pull]
     rebase = true
+
+[merge]
+    tool = nvimdiff
+    conflictstyle = diff3
+
+[mergetool]
+    keepBackup = false
+    prompt = true
+
