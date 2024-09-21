@@ -197,12 +197,12 @@ bar {
 
 # startup commands
 exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
 exec --no-startup-id ~/.local/scripts/mouse-settings.sh
 exec --no-startup-id xrandr --output DP-4 --mode 5120x1440
 
 # middle mouse scroll
-exec --no-startup-id xinput set-prop 10 "libinput Scroll Method Enabled" 0 0 1
+exec --no-startup-id xinput set-prop 11 "libinput Scroll Method Enabled" 0 0 1
 
 # maybe need to work more on polybar config before i like it
 # exec --no-startup-id ~/.config/polybar/launch.sh
@@ -211,6 +211,7 @@ exec --no-startup-id xinput set-prop 10 "libinput Scroll Method Enabled" 0 0 1
 for_window [workspace="3"] floating enable
 
 
+# scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-# scratchpad
+
