@@ -23,6 +23,7 @@ alias z='zellij'
 alias nvimc="~/.local/scripts/start-nvim-container.sh"
 alias dev="distrobox enter dev"
 export NVIM_APPNAME="nvim-lazy"
+export PYTHONBREAKPOINT=ipdb.set_trace
 
 # zsh key bindings
 bindkey '\e[1;5C' forward-word

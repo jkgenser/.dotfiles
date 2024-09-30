@@ -208,7 +208,7 @@ exec --no-startup-id xinput set-prop 11 "libinput Scroll Method Enabled" 0 0 1
 # exec --no-startup-id ~/.config/polybar/launch.sh
 
 # workspace 3 should always float
-for_window [workspace="3"] floating enable
+# for_window [workspace="3"] floating enable
 
 
 # scratchpad
