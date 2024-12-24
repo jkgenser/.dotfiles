@@ -13,3 +13,5 @@
     keepBackup = false
     prompt = true
 
+[credential]
+	helper = --help
