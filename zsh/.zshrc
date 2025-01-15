@@ -3,6 +3,7 @@ eval "$(starship init zsh)"
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
+HISTORY_IGNORE="export*"
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 

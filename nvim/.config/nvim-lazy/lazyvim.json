@@ -2,8 +2,8 @@
   "extras": [
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.markdown",
-    "lazyvim.plugins.extras.lang.terraform",
-    "lazyvim.plugins.extras.lang.toml"
+    "lazyvim.plugins.extras.lang.sql",
+    "lazyvim.plugins.extras.lang.terraform"
   ],
   "news": {
     "NEWS.md": "10960"
