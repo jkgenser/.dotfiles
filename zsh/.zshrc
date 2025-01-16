@@ -23,6 +23,7 @@ alias z='zellij'
 
 alias nvimc="~/.local/scripts/start-nvim-container.sh"
 alias dev="distrobox enter dev"
+alias ac="source .venv/bin/activate"
 export NVIM_APPNAME="nvim-lazy"
 export PYTHONBREAKPOINT=ipdb.set_trace
 
