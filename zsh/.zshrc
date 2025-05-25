@@ -7,9 +7,6 @@ HISTORY_IGNORE="export*"
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 
-alias rpmo='rpm-ostree'
-alias tb='toolbox'
-alias db='distrobox'
 alias tf='terraform'
 alias z='zellij'
 
@@ -21,8 +18,6 @@ alias z='zellij'
 # uncomment this if I ever use wayland/sway again
 # export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
-alias nvimc="~/.local/scripts/start-nvim-container.sh"
-alias dev="distrobox enter dev"
 alias ac="source .venv/bin/activate"
 export NVIM_APPNAME="nvim-lazy"
 export PYTHONBREAKPOINT=ipdb.set_trace
