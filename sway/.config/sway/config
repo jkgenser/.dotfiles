@@ -171,3 +171,7 @@ input "type:pointer" {
   scroll_button BTN_MIDDLE       # pick the button used for button-scrolling (2 = middle)
   # accel_profile flat           # optional: if you want no adaptive accel curve
 }
+
+# screenshots
+# requires grim and slurp grim takes screenshot and slurp selects a range
+bindsym $mod+Shift+p exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%Y-%m-%d-%H%M%S).png
