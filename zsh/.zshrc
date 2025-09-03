@@ -10,13 +10,9 @@ setopt SHARE_HISTORY
 alias tf='terraform'
 alias z='zellij'
 
-# maybe uncomment this when we get a more recent version of fzf
-# source <(fzf --zsh)
 
 # make sure that electron apps like slack use wayland
-# otherwise there are blurry fonts
-# uncomment this if I ever use wayland/sway again
-# export ELECTRON_OZONE_PLATFORM_HINT=wayland
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 alias ac="source .venv/bin/activate"
 export NVIM_APPNAME="nvim-lazy"
