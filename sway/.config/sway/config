@@ -146,7 +146,7 @@ output DisplayPort-0 {
   position 0 0
   scale 1
   # optional:
-  adaptive_sync on
+  adaptive_sync off
 }
 output DP-1 {
   mode 5120x1440@120Hz

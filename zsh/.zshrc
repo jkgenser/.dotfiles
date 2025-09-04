@@ -41,27 +41,6 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-
-# Normalize SSH_AUTH_SOCK on Wayland/Sway
-unset SSH_AUTH_SOCK
-for sock in \
-  "$XDG_RUNTIME_DIR/gcr/ssh" \
-  "$XDG_RUNTIME_DIR/ssh-agent.socket" \
-  "$XDG_RUNTIME_DIR/keyring/ssh" \
-  "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
-do
-  if [ -S "$sock" ]; then
-    export SSH_AUTH_SOCK="$sock"
-    break
-  fi
-done
-
-# Start SSH agent if not already running
-if [ -z "$SSH_AUTH_SOCK" ]; then
-    eval "$(ssh-agent -s)"
-fi
-
-
 # Created by `pipx` on 2024-09-07 15:33:37
 export PATH="$PATH:/home/j/.local/bin"
 
@@ -74,3 +53,28 @@ if [ -f '/home/j/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/j/google-
 
 
 export PYTHONPATH="$HOME/oler-ta:$HOME/oler:$HOME/oler/server:$HOME/oler/rpa:$HOME/oler/olerlib:$PYTHONPATH"
+
+
+# SSH
+# GPG-Agent as SSH Agent
+# Ensures that the SSH_AUTH_SOCK environment variable points
+# to the gpg-agent's SSH socket.
+# This makes gpg-agent handle SSH authentication for all new Zsh shells.
+if command -v gpgconf >/dev/null 2>&1; then
+    # Get the gpg-agent SSH socket path.
+    # We use `gpgconf` as it's the most reliable way to get the active socket.
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+
+    # Add any specific SSH keys to the gpg-agent if they are not already added.
+    # This assumes your default keys are in ~/.ssh/.
+    # You might not need this if you already use `ssh-add` manually or if
+    # the agent remembers keys from previous sessions.
+    # Consider if you want this to run every time or only if keys are missing.
+    # if ! ssh-add -l >/dev/null 2>&1; then
+    #    ssh-add ~/.ssh/id_rsa ~/.ssh/id_ed25519 # Add your specific key paths here
+    # fi
+fi
+
+# Prevent system-wide ssh-agent from interfering.
+# This helps avoid spawning redundant ssh-agent instances.
+unset SSH_AGENT_PID
