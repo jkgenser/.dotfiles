@@ -42,6 +42,20 @@ export NVM_DIR="$HOME/.config/nvm"
 
 
 
+# Normalize SSH_AUTH_SOCK on Wayland/Sway
+unset SSH_AUTH_SOCK
+for sock in \
+  "$XDG_RUNTIME_DIR/gcr/ssh" \
+  "$XDG_RUNTIME_DIR/ssh-agent.socket" \
+  "$XDG_RUNTIME_DIR/keyring/ssh" \
+  "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
+do
+  if [ -S "$sock" ]; then
+    export SSH_AUTH_SOCK="$sock"
+    break
+  fi
+done
+
 # Start SSH agent if not already running
 if [ -z "$SSH_AUTH_SOCK" ]; then
     eval "$(ssh-agent -s)"

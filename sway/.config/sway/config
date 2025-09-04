@@ -148,6 +148,13 @@ output DisplayPort-0 {
   # optional:
   adaptive_sync on
 }
+output DP-1 {
+  mode 5120x1440@120Hz
+  position 0 0
+  scale 1
+  # optional:
+  adaptive_sync off
+}
 
 # Keyboard / pointer (Wayland)
 input "*" {
