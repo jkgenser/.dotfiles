@@ -63,3 +63,6 @@ fi
 if [ -f "$HOME/.ssh/ssh-agent-info" ]; then
     . "$HOME/.ssh/ssh-agent-info"
 fi
+
+# opencode
+export PATH=/home/j/.opencode/bin:$PATH
