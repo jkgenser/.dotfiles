@@ -1,0 +1,36 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    // "builder": {
+    //   "mode": "primary",
+    //   "model": "gemini-2.5-flash",
+    //   "tools": {
+    //     "write": true,
+    //     "edit": true,
+    //     "bash": true,
+    //   },
+    // },
+    // "planner": {
+    //   "mode": "primary",
+    //   "model": "gemini-2.5-pro",
+    //   "tools": {
+    //     "write": false,
+    //     "edit": false,
+    //     "bash": false,
+    //   },
+    // },
+  },
+  "provider": {
+    "openrouter": {
+      "models": {
+        "qwen/qwen3-coder": {
+          "options": {
+            "provider": {
+              "order": ["cerebras/fp8", "baseten/fp8", "together/fp8"],
+            },
+          },
+        },
+      },
+    },
+  },
+}

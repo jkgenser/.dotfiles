@@ -18,6 +18,9 @@ alias ac="source .venv/bin/activate"
 export NVIM_APPNAME="nvim-lazy"
 export PYTHONBREAKPOINT=ipdb.set_trace
 
+# prevent zellij from going into vi mode
+bindkey -e
+
 # zsh key bindings
 bindkey '\e[1;5C' forward-word
 bindkey '\e[1;5D' backward-word
@@ -66,3 +69,8 @@ fi
 
 # opencode
 export PATH=/home/j/.opencode/bin:$PATH
+
+# export EDITOR=nvim
+
+# prevent zellij from going into vi mode
+bindkey -e
