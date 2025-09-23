@@ -187,7 +187,10 @@ seat seat0 xcursor_theme $cursor_theme
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
-output HEADLESS-1 resolution 1280x720 position 0,1080
+# output HEADLESS-1 resolution 1280x720 position 0,1080
+#
+# 5120,0 means we are placing this to the RIGHT of our physical display
+output HEADLESS-1 resolution 1920x1080 position 5120,0
 output HEADLESS-1 bg "#220900" solid_color
 workspace 0 output HEADLESS-1
 bindsym $mod+0 workspace number 0
