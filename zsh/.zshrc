@@ -74,3 +74,5 @@ export PATH=/home/j/.opencode/bin:$PATH
 
 # prevent zellij from going into vi mode
 bindkey -e
+
+export OPENCODE_ENABLE_EXPERIMENTAL_MODELS=true

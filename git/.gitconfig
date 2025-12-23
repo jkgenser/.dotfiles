@@ -2,6 +2,9 @@
     email = jerrygenser@gmail.com
     name = Jerry Genser
 
+[core]
+    editor = nvim -f
+
 [pull]
     rebase = true
 
