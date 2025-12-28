@@ -7,7 +7,7 @@ vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_python_ruff = "ruff"
 vim.opt.relativenumber = false
 vim.opt.number = false
-
+vim.g.lazyvim_picker = "snacks"
 if vim.fn.executable("wl-copy") == 1 and vim.fn.executable("wl-paste") == 1 then
   vim.g.clipboard = {
     name = "wl-clipboard",
