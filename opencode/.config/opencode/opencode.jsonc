@@ -5,4 +5,40 @@
     "bash": "allow",
     "webfetch": "allow",
   },
+  "provider": {
+    "opencode": {
+      "models": {
+        "claude-opus-4-5": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 16000,
+            },
+          },
+        },
+        "claude-sonnet-4-5": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 16000,
+            },
+          },
+        },
+      },
+    },
+  },
+  // "provider": {
+  //   "opencode": {
+  //     "models": {
+  //       "claude-sonnet-4-5": {
+  //         "options": {
+  //           "thinking": {
+  //             "type": "enabled",
+  //             "budgetTokens": 16000,
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
 }
