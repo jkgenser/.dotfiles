@@ -200,8 +200,11 @@ install_nvm() {
     export NVM_DIR="$HOME/.config/nvm"
     mkdir -p "$NVM_DIR"
     
-    # PROFILE=/dev/null prevents nvm from modifying .zshrc (dotfiles already handle this)
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | PROFILE=/dev/null bash
+    # Create empty .zshrc so nvm doesn't complain about missing profile
+    # (stow will replace it later with our dotfiles version, backing up this one)
+    touch ~/.zshrc
+    
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
     
     # Load nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
