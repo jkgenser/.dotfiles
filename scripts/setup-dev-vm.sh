@@ -189,35 +189,29 @@ install_ty() {
 # NVM + NODE
 # -----------------------------------------------------------------------------
 install_nvm() {
-    if [ -d "$HOME/.config/nvm" ] || [ -d "$HOME/.nvm" ]; then
-        log_success "nvm already installed"
-        return
-    fi
-    
-    log_info "Installing nvm..."
-    
-    # Install to ~/.config/nvm to match your zshrc config
+    log_info "Installing nvm (no profile edits)..."
     export NVM_DIR="$HOME/.config/nvm"
     mkdir -p "$NVM_DIR"
-    
-    # Create empty .zshrc so nvm doesn't complain about missing profile
-    # (stow will replace it later with our dotfiles version, backing up this one)
-    touch ~/.zshrc
-    
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-    
-    # Load nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    
-    # Install latest LTS (non-fatal if it fails)
-    log_info "Installing Node.js LTS..."
-    if nvm install --lts; then
-        nvm use --lts
-        nvm alias default 'lts/*'
-        log_success "nvm + Node.js LTS installed"
+
+    # Clone nvm directly instead of using install script (avoids profile modifications)
+    if [ ! -s "$NVM_DIR/nvm.sh" ]; then
+        git clone --depth=1 https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+        (cd "$NVM_DIR" && git checkout v0.40.1 2>/dev/null)
     else
-        log_warn "Node.js install failed - run 'nvm install --lts' manually after setup"
+        log_success "nvm already installed"
     fi
+
+    . "$NVM_DIR/nvm.sh"
+
+    log_info "Installing Node.js LTS..."
+    if command -v timeout >/dev/null 2>&1; then
+        timeout 10m bash -c "source $NVM_DIR/nvm.sh && nvm install --lts --latest-npm" || log_warn "Node install timed out/failed"
+    else
+        nvm install --lts --latest-npm || log_warn "Node install failed"
+    fi
+
+    nvm alias default 'lts/*' >/dev/null 2>&1 || true
+    log_success "nvm installed"
 }
 
 # -----------------------------------------------------------------------------
