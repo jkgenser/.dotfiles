@@ -200,18 +200,21 @@ install_nvm() {
     export NVM_DIR="$HOME/.config/nvm"
     mkdir -p "$NVM_DIR"
     
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+    # PROFILE=/dev/null prevents nvm from modifying .zshrc (dotfiles already handle this)
+    PROFILE=/dev/null curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
     
     # Load nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     
-    # Install latest LTS
+    # Install latest LTS (non-fatal if it fails)
     log_info "Installing Node.js LTS..."
-    nvm install --lts
-    nvm use --lts
-    nvm alias default 'lts/*'
-    
-    log_success "nvm + Node.js LTS installed"
+    if nvm install --lts; then
+        nvm use --lts
+        nvm alias default 'lts/*'
+        log_success "nvm + Node.js LTS installed"
+    else
+        log_warn "Node.js install failed - run 'nvm install --lts' manually after setup"
+    fi
 }
 
 # -----------------------------------------------------------------------------
