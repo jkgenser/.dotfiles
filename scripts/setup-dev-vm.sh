@@ -201,7 +201,7 @@ install_nvm() {
     mkdir -p "$NVM_DIR"
     
     # PROFILE=/dev/null prevents nvm from modifying .zshrc (dotfiles already handle this)
-    PROFILE=/dev/null curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | PROFILE=/dev/null bash
     
     # Load nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
