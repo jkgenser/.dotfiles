@@ -177,8 +177,19 @@ input "type:pointer" {
 }
 
 # screenshots
-# requires grim and slurp grim takes screenshot and slurp selects a range
+# requires: grim, slurp, wl-clipboard
+# - grim: takes the screenshot
+# - slurp: select a region
+# - wl-copy: copies to clipboard
+#
+# save to file
 bindsym $mod+Shift+p exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%Y-%m-%d-%H%M%S).png
+# save to file (3s delay - for capturing dropdowns/menus)
+bindsym $mod+Shift+o exec region=$(slurp) && sleep 3 && grim -g "$region" ~/Pictures/screenshot-$(date +%Y-%m-%d-%H%M%S).png
+# copy to clipboard
+bindsym $mod+Shift+y exec grim -g "$(slurp)" - | wl-copy
+# copy to clipboard (3s delay - for capturing dropdowns/menus)
+bindsym $mod+Shift+u exec region=$(slurp) && sleep 3 && grim -g "$region" - | wl-copy
 
 
 # cursor theme
