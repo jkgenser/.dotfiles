@@ -5,6 +5,11 @@
     "bash": "allow",
     "webfetch": "allow",
   },
+  "agent": {
+    "explore": {
+      "model": "opencode/claude-sonnet-4-5",
+    },
+  },
   "provider": {
     "opencode": {
       "models": {
