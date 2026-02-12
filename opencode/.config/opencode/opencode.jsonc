@@ -7,7 +7,10 @@
   },
   "agent": {
     "explore": {
-      "model": "opencode/claude-sonnet-4-5",
+      // "model": "opencode/claude-sonnet-4-5",
+      // "model": "opencode/minimax-m2.1",
+      // "model": "opencode/claude-haiku-4-5",
+      "model": "opencode/gpt-5.1-codex-max",
     },
   },
   "provider": {
