@@ -7,13 +7,34 @@
   },
   "agent": {
     "explore": {
-      "model": "opencode/claude-sonnet-4-6",
+      // "model": "opencode/claude-sonnet-4-6",
+      "model": "google-vertex/gemini-3-flash-preview",
       // "model": "opencode/minimax-m2.1",
       // "model": "opencode/claude-haiku-4-5",
       // "model": "opencode/gpt-5.1-codex-max",
     },
   },
   "provider": {
+    "google-vertex": {
+      "models": {
+        "gemini-3.0-flash-preview": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 2048,
+            },
+          },
+        },
+        "gemini-3.1-pro-preview": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 2048,
+            },
+          },
+        },
+      },
+    },
     "opencode": {
       "models": {
         "claude-opus-4-6": {

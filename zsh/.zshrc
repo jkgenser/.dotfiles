@@ -76,3 +76,6 @@ export PATH=/home/j/.opencode/bin:$PATH
 bindkey -e
 
 export OPENCODE_ENABLE_EXPERIMENTAL_MODELS=true
+
+# Source local environment variables (not committed)
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
