@@ -79,3 +79,14 @@ export OPENCODE_ENABLE_EXPERIMENTAL_MODELS=true
 
 # Source local environment variables (not committed)
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# bun completions
+[ -s "/home/j/.bun/_bun" ] && source "/home/j/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -26,7 +26,7 @@ git clone https://github.com/jkgenser/.dotfiles ~/.dotfiles
 | zellij | Terminal multiplexer |
 | fzf | Fuzzy finder |
 | rust/cargo | Rust toolchain |
-| uv + ty | Python package manager + type checker |
+| uv | Python package manager |
 | nvm + node | Node.js version manager |
 | gcloud | Google Cloud CLI |
 | terraform | Infrastructure as code |

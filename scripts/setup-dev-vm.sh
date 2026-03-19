@@ -168,24 +168,6 @@ install_uv() {
 }
 
 # -----------------------------------------------------------------------------
-# TY (Python type checker)
-# -----------------------------------------------------------------------------
-install_ty() {
-    if command_exists ty; then
-        log_success "ty already installed"
-        return
-    fi
-    
-    log_info "Installing ty..."
-    
-    # Ensure uv is available
-    export PATH="$HOME/.local/bin:$PATH"
-    
-    uv tool install ty
-    log_success "ty installed"
-}
-
-# -----------------------------------------------------------------------------
 # NVM + NODE
 # -----------------------------------------------------------------------------
 install_nvm() {
@@ -379,7 +361,6 @@ main() {
     install_zellij
     install_neovim
     install_uv
-    install_ty
     install_nvm
     install_gcloud
     install_terraform
@@ -399,8 +380,8 @@ main() {
     echo "  - zellij"
     echo "  - fzf"
     echo "  - rust/cargo"
-    echo "  - uv + ty"
-    echo "  - nvm + node.js"
+  echo "  - uv"
+  echo "  - nvm + node.js"
     echo "  - gcloud cli"
     echo "  - terraform"
     echo "  - docker cli"
