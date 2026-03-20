@@ -15,7 +15,6 @@ alias z='zellij'
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 alias ac="source .venv/bin/activate"
-export NVIM_APPNAME="nvim-lazy"
 export PYTHONBREAKPOINT=ipdb.set_trace
 
 # prevent zellij from going into vi mode

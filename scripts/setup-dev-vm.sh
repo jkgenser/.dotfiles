@@ -320,18 +320,33 @@ setup_dotfiles() {
 # -----------------------------------------------------------------------------
 # POST-INSTALL
 # -----------------------------------------------------------------------------
+install_fonts() {
+    if fc-list | grep -qi "firacode nerd font"; then
+        log_success "FiraCode Nerd Font already installed"
+        return
+    fi
+
+    log_info "Installing FiraCode Nerd Font..."
+    mkdir -p "$HOME/.local/share/fonts"
+    curl -fsSL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz" \
+        -o /tmp/FiraCode.tar.xz
+    tar -xf /tmp/FiraCode.tar.xz -C "$HOME/.local/share/fonts"
+    rm /tmp/FiraCode.tar.xz
+    fc-cache -f "$HOME/.local/share/fonts"
+    log_success "FiraCode Nerd Font installed"
+}
+
 post_install() {
     log_info "Running post-install tasks..."
     
     # Change default shell to zsh
     if [ "$SHELL" != "$(which zsh)" ]; then
         log_info "Changing default shell to zsh..."
-        sudo chsh -s "$(which zsh)" "$USER"
+        chsh -s "$(which zsh)"
     fi
     
     # Bootstrap Neovim plugins (headless)
     log_info "Bootstrapping Neovim plugins (this may take a minute)..."
-    export NVIM_APPNAME="nvim-lazy"
     nvim --headless "+Lazy! sync" +qa 2>/dev/null || true
     
     log_success "Post-install complete"
@@ -366,6 +381,7 @@ main() {
     install_terraform
     install_docker
     install_opencode
+    install_fonts
     setup_dotfiles
     post_install
     
@@ -380,12 +396,13 @@ main() {
     echo "  - zellij"
     echo "  - fzf"
     echo "  - rust/cargo"
-  echo "  - uv"
-  echo "  - nvm + node.js"
+    echo "  - uv"
+    echo "  - nvm + node.js"
     echo "  - gcloud cli"
     echo "  - terraform"
     echo "  - docker cli"
     echo "  - opencode"
+    echo "  - FiraCode Nerd Font"
     echo ""
     echo "Dotfiles linked: zsh, git, nvim, zellij, opencode"
     echo ""
