@@ -7,5 +7,5 @@ key = "Return"
 mods = "Shift"
 chars = "\u001b\r"
 
-[terminal.shell]
-program = "/usr/bin/zsh"
+# [terminal.shell]
+# program = "/usr/bin/zsh"
