@@ -14,7 +14,7 @@
   },
   "agent": {
     "explore": {
-      "model": "opencode/kimi-k2.5",
+      "model": "opencode-go/kimi-k2.5",
       // "model": "opencode/nemotron-3-super-free",
       // "model": "opencode/claude-sonnet-4-6",
       // "model": "google-vertex/gemini-3-flash-preview",
