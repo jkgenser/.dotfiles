@@ -9,6 +9,7 @@ setopt SHARE_HISTORY
 
 alias tf='terraform'
 alias z='zellij'
+alias oc='opencode'
 
 
 # make sure that electron apps like slack use wayland
