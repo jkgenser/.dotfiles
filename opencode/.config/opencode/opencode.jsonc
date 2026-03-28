@@ -47,14 +47,14 @@
     },
     "opencode": {
       "models": {
-        "claude-opus-4-6": {
-          "options": {
-            "thinking": {
-              "type": "enabled",
-              "budgetTokens": 16000,
-            },
-          },
-        },
+        // "claude-opus-4-6": {
+        //   "options": {
+        //     "thinking": {
+        //       "type": "enabled",
+        //       "budgetTokens": 16000,
+        //     },
+        //   },
+        // },
         "claude-opus-4-5": {
           "options": {
             "thinking": {
@@ -71,14 +71,14 @@
             },
           },
         },
-        "claude-sonnet-4-6": {
-          "options": {
-            "thinking": {
-              "type": "enabled",
-              "budgetTokens": 16000,
-            },
-          },
-        },
+        // "claude-sonnet-4-6": {
+        //   "options": {
+        //     "thinking": {
+        //       "type": "enabled",
+        //       "budgetTokens": 16000,
+        //     },
+        //   },
+        // },
       },
     },
   },
