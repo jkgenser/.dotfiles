@@ -26,6 +26,13 @@
     },
   },
   "provider": {
+    // "google-vertex-anthropic": {
+    //   "models": {
+    //     "claude-opus-4-6@default": {
+    //       "options": {},
+    //     },
+    //   },
+    // },
     "google-vertex": {
       "models": {
         "gemini-3.0-flash-preview": {
