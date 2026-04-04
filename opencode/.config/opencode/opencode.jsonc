@@ -27,33 +27,6 @@
     },
   },
   "provider": {
-    // "google-vertex-anthropic": {
-    //   "models": {
-    //     "claude-opus-4-6@default": {
-    //       "options": {},
-    //     },
-    //   },
-    // },
-    "google-vertex": {
-      "models": {
-        "gemini-3.0-flash-preview": {
-          "options": {
-            "thinking": {
-              "type": "enabled",
-              "budgetTokens": 2048,
-            },
-          },
-        },
-        "gemini-3.1-pro-preview": {
-          "options": {
-            "thinking": {
-              "type": "enabled",
-              "nbudgetTokens": 1024,
-            },
-          },
-        },
-      },
-    },
     "opencode": {
       "models": {
         // "claude-opus-4-6": {
